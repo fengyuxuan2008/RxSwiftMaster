@@ -15,12 +15,14 @@ enum DataManagerError: Error {
 }
 
 final class WeatherDataManager {
-    private let baseURL: URL
-    private init(baseURL: URL){
+    internal let baseURL: URL
+    internal let urlSession: URLSessionProtocol
+    internal init(baseURL: URL, urlSession: URLSessionProtocol){//依赖注入
         self.baseURL = baseURL
+        self.urlSession = urlSession
     }
     
-    static let shared = WeatherDataManager(baseURL: API.authenticatedURL)
+    static let shared = WeatherDataManager(baseURL: API.authenticatedURL, urlSession: URLSession.shared)
     
     typealias CompletionHandler = (WeatherData?, DataManagerError?) -> Void
     
@@ -31,12 +33,12 @@ final class WeatherDataManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
         
-        URLSession.shared.dataTask(with: request, completionHandler: {
+        self.urlSession.dataTask(with: request, completionHandler: {
             (data, response, error) in
             DispatchQueue.main.async {
                  self.didFinishGettingWeatherData(data: data, response: response, error: error, completion: completion)
             }
-        })
+            }).resume()
     }
     
     func didFinishGettingWeatherData(data: Data?, response: URLResponse?, error: Error?, completion: CompletionHandler){
