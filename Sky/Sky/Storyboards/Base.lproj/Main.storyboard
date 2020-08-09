@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Vk-OW-rfS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="323"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="322.5"/>
                                 <connections>
                                     <segue destination="16m-ZX-BqD" kind="embed" id="Uz7-iZ-P98"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjo-ZU-cDZ">
-                                <rect key="frame" x="0.0" y="379" width="414" height="483"/>
+                                <rect key="frame" x="0.0" y="378.5" width="414" height="483.5"/>
                                 <connections>
                                     <segue destination="tQJ-qH-Goa" kind="embed" id="o9l-Sp-ycp"/>
                                 </connections>
@@ -47,16 +47,25 @@
             </objects>
             <point key="canvasLocation" x="132" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Weather View Controller-->
         <scene sceneID="aks-uE-bCX">
             <objects>
-                <viewController id="16m-ZX-BqD" sceneMemberID="viewController">
+                <viewController id="16m-ZX-BqD" customClass="CurrentWeatherViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeo-zM-k0V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aNs-Yr-eZ6">
+                                <rect key="frame" x="197" y="151.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHb-Fm-M43">
+                                <rect key="frame" x="207" y="161.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yif-2k-wsd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="322.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="m12-Qb-kNV">
                                         <rect key="frame" x="143" y="97.5" width="128" height="128"/>
@@ -88,7 +97,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfP-hx-HYS">
-                                        <rect key="frame" x="8" y="145" width="127" height="33.5"/>
+                                        <rect key="frame" x="8" y="144.5" width="127" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -105,8 +114,8 @@
                                         <color key="textColor" red="0.85628765819999997" green="0.37155145410000001" blue="0.27055838700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouU-Pu-GZ5">
-                                        <rect key="frame" x="279" y="145" width="127" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouU-Pu-GZ5">
+                                        <rect key="frame" x="279" y="144.5" width="127" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -138,25 +147,42 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="VHb-Fm-M43" firstAttribute="centerX" secondItem="jeo-zM-k0V" secondAttribute="centerX" id="BCN-0E-8B0"/>
                             <constraint firstAttribute="bottom" secondItem="yif-2k-wsd" secondAttribute="bottom" id="GPN-2L-anN"/>
                             <constraint firstItem="yif-2k-wsd" firstAttribute="leading" secondItem="jeo-zM-k0V" secondAttribute="leading" id="Hgf-tA-fTw"/>
+                            <constraint firstItem="aNs-Yr-eZ6" firstAttribute="centerY" secondItem="jeo-zM-k0V" secondAttribute="centerY" id="LkA-59-EIu"/>
                             <constraint firstAttribute="trailing" secondItem="yif-2k-wsd" secondAttribute="trailing" id="QBH-ND-juZ"/>
+                            <constraint firstItem="aNs-Yr-eZ6" firstAttribute="centerX" secondItem="jeo-zM-k0V" secondAttribute="centerX" id="U8Y-Ql-dXJ"/>
+                            <constraint firstItem="VHb-Fm-M43" firstAttribute="centerY" secondItem="jeo-zM-k0V" secondAttribute="centerY" id="eZc-pX-tMj"/>
                             <constraint firstItem="yif-2k-wsd" firstAttribute="top" secondItem="jeo-zM-k0V" secondAttribute="top" id="zH3-pw-Djk"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="zKm-Wz-ysc"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="aNs-Yr-eZ6" id="HF8-lR-GOZ"/>
+                        <outlet property="dateLabel" destination="uO5-Nj-By6" id="j6i-vk-Bwt"/>
+                        <outlet property="humidityLabel" destination="ouU-Pu-GZ5" id="GTH-Jd-Kpl"/>
+                        <outlet property="loadingFailedLabel" destination="VHb-Fm-M43" id="TRH-FC-pKH"/>
+                        <outlet property="locationLabel" destination="lLb-P1-jUK" id="tUm-2e-BvB"/>
+                        <outlet property="summaryLabel" destination="vlk-sM-AjZ" id="gsY-7J-Gq4"/>
+                        <outlet property="temperatureLabel" destination="VfP-hx-HYS" id="TA2-fy-Fqc"/>
+                        <outlet property="weatherContainerView" destination="yif-2k-wsd" id="ET8-uG-YsR"/>
+                        <outlet property="weatherIcon" destination="m12-Qb-kNV" id="Ah6-jI-0NS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvY-fm-ypp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="-152"/>
+            <point key="canvasLocation" x="829" y="-140"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="19e-f9-XU7">
             <objects>
                 <viewController id="tQJ-qH-Goa" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ou-Nw-C9f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="483"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="483.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Swb-M3-L4L"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jln-63-BE2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
