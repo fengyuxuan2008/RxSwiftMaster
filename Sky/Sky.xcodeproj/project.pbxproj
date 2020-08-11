@@ -23,6 +23,8 @@
 		1886F4FB24E028EA000F092E /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886F4FA24E028EA000F092E /* CurrentWeatherViewController.swift */; };
 		188C87AC24E18C7B00A14003 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C87AB24E18C7B00A14003 /* CurrentWeatherViewModel.swift */; };
 		188C87AE24E1962B00A14003 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C87AD24E1962B00A14003 /* UIImage.swift */; };
+		188CD1CF24E2E6090014EBB9 /* WeekWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CD1CE24E2E6090014EBB9 /* WeekWeatherViewController.swift */; };
+		188CD1D224E2E6590014EBB9 /* WeekWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CD1D124E2E6590014EBB9 /* WeekWeatherTableViewCell.swift */; };
 		6890B8121F7CC25500ACB755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8111F7CC25500ACB755 /* AppDelegate.swift */; };
 		6890B8141F7CC25500ACB755 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8131F7CC25500ACB755 /* RootViewController.swift */; };
 		6890B8171F7CC25500ACB755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8151F7CC25500ACB755 /* Main.storyboard */; };
@@ -66,6 +68,8 @@
 		1886F4FA24E028EA000F092E /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		188C87AB24E18C7B00A14003 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		188C87AD24E1962B00A14003 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		188CD1CE24E2E6090014EBB9 /* WeekWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewController.swift; sourceTree = "<group>"; };
+		188CD1D124E2E6590014EBB9 /* WeekWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		6890B80E1F7CC25500ACB755 /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6890B8111F7CC25500ACB755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6890B8131F7CC25500ACB755 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -154,9 +158,11 @@
 		1886F4F724E028AC000F092E /* WeatherViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				188CD1D024E2E6340014EBB9 /* TableViewCells */,
 				188C87AA24E18C5200A14003 /* ViewModels */,
 				1886F4F824E028D3000F092E /* WeatherViewController.swift */,
 				1886F4FA24E028EA000F092E /* CurrentWeatherViewController.swift */,
+				188CD1CE24E2E6090014EBB9 /* WeekWeatherViewController.swift */,
 			);
 			path = WeatherViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +181,14 @@
 				188C87AB24E18C7B00A14003 /* CurrentWeatherViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		188CD1D024E2E6340014EBB9 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				188CD1D124E2E6590014EBB9 /* WeekWeatherTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		6890B8051F7CC25500ACB755 = {
@@ -419,6 +433,8 @@
 				1886047724DC5F7B00FDC47B /* WeatherDataManager.swift in Sources */,
 				1886F4F024DEDF87000F092E /* URLSessionDataTaskProtocol.swift in Sources */,
 				1886F4F224DEDFB7000F092E /* URLSessionDataTask.swift in Sources */,
+				188CD1CF24E2E6090014EBB9 /* WeekWeatherViewController.swift in Sources */,
+				188CD1D224E2E6590014EBB9 /* WeekWeatherTableViewCell.swift in Sources */,
 				1886F4EC24DEDD42000F092E /* URLSession.swift in Sources */,
 				188C87AE24E1962B00A14003 /* UIImage.swift in Sources */,
 				1886F4FB24E028EA000F092E /* CurrentWeatherViewController.swift in Sources */,
