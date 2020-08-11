@@ -119,6 +119,17 @@ class WeatherDataManagerTest: XCTestCase {
                 "time" : 1507180335,
                 "summary" : "Light Snow"
             }
+            "daily": {
+                "data": [
+                    {
+                        "time": 1507180335,
+                        "icon": "clear-day",
+                        "temperatureLow": 66,
+                        "temperatureHigh": 82,
+                        "humidity": 0.25
+                    }
+                ]
+            }
         }
         """.data(using: .utf8)!
         session.responseData = data
@@ -129,12 +140,22 @@ class WeatherDataManagerTest: XCTestCase {
             (d, _) in decoded = d
         })
         
+        let expectedWeekData = WeatherData.WeekWeatherData(data: [
+        ForecastData(
+            time: Date(timeIntervalSince1970: 1507180335),
+            temperatureLow: 66,
+            temperatureHigh: 82,
+            icon: "clear-day",
+            humidity: 0.25)
+        ])
+        
         let expected = WeatherData(latitude: 52, longitude: 100, currently: WeatherData.CurrentWeather(
             time: Date(timeIntervalSince1970: 1507180335),
             summary: "Light Snow",
             icon: "snow",
             temperature: 23,
-            humidity: 0.91))
+            humidity: 0.91),
+        daily: expectedWeekData)
         
         XCTAssertEqual(decoded, expected)
     }
