@@ -12,7 +12,9 @@ import CoreLocation
 class RootViewController: UIViewController {
     
     var currentWeatherViewController: CurrentWeatherViewController!
+    var weekWeatherViewController: WeekWeatherViewController!
     private let segueCurrentWeather = "SegueCurrentWeather"
+    private let segueWeekWeather = "segueWeekWeather"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
@@ -26,8 +28,13 @@ class RootViewController: UIViewController {
             }
             
             destination.delegate = self
+            destination.viewModel = CurrentWeatherViewModel()
             currentWeatherViewController = destination
-            
+        case segueWeekWeather:
+            guard let destination = segue.destination as? WeekWeatherViewController else {
+                fatalError("Invalid destination view controller.")
+            }
+            weekWeatherViewController = destination
         default:
             break
         }
@@ -56,6 +63,7 @@ class RootViewController: UIViewController {
             else if let response = response {
                 // Nofity CurrentWeatherViewController
                 self.currentWeatherViewController.viewModel?.weather = response
+                self.weekWeatherViewController.viewModel = WeekWeatherViewModel.init(weatherData: response.daily.data)
             }
         })
     }

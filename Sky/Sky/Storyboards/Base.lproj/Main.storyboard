@@ -25,7 +25,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjo-ZU-cDZ">
                                 <rect key="frame" x="0.0" y="378.5" width="414" height="483.5"/>
                                 <connections>
-                                    <segue destination="tQJ-qH-Goa" kind="embed" id="o9l-Sp-ycp"/>
+                                    <segue destination="tQJ-qH-Goa" kind="embed" identifier="segueWeekWeather" id="o9l-Sp-ycp"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -179,7 +179,7 @@
             <objects>
                 <viewController id="tQJ-qH-Goa" customClass="WeekWeatherViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ou-Nw-C9f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="483"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="483.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="O3N-ec-8ca">
